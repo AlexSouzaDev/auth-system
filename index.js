@@ -8,7 +8,7 @@ const authRouter = require('./routers/authRouter'); // Importing auth router
 
 const app = express();
 app.use(corss());
-app.use(helmet)
+app.use(helmet()); // Use helmet for security
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
