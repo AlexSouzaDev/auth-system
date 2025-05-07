@@ -4,6 +4,8 @@ const corss = require('cors'); // CORS middleware
 const cookieParser = require('cookie-parser'); // Cookie parser middleware
 const mongoose = require('mongoose'); // MongoDB ODM
 
+const authRouter = require('./routers/authRouter'); // Importing auth router
+
 const app = express();
 app.use(corss());
 app.use(helmet)
@@ -16,6 +18,8 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 }).catch((err) => {
     console.log('Error connecting to MongoDB:', err.message);
 })
+
+app.use('/api/auth', authRouter); // Use auth router for authentication routes
 // Import routes
 
 app.get('/', (req, res) => {
