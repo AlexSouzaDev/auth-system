@@ -9,5 +9,4 @@ exports.signupSchema = Joi.object({
         .min(6)
         .max(20)
         .pattern(new RegExp(/^[a-zA-Z0-9]{3,30}$/))
-        .message('Password must be alphanumeric and between 3 to 30 characters long'),
 })
