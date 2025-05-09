@@ -1,5 +1,5 @@
 const { signupSchema } = require('../middlewares/validator');
-const User = require('../models/User');
+const User = require('../models/usersmodel'); // Import the User model
 const { doHash } = require('../utils/hashing');
 const { hash } = require('bcryptjs');
 

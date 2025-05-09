@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const User = require('../models/usersmodel'); // Import the User model
 const MimeNode = require('nodemailer/lib/mime-node');
 
 const userSchema = new mongoose.Schema({
