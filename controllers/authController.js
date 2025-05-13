@@ -42,3 +42,12 @@ exports.register = async (req, res) => {
 
     }
 };
+
+exports.login = async (req, res) => {
+    const { user, email, password } = req.body;
+    try {
+        const user = await User
+    } catch (error) {
+        console.log(error);
+    }
+}
