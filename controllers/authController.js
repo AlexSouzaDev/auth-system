@@ -46,7 +46,11 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     const { user, email, password } = req.body;
     try {
-        const user = await User
+        const { error, value } = signupSchema.validate({ user, email, password });
+        return res.status(401).json({
+            sucess: false,
+            message: error.details[0].message,
+        });
     } catch (error) {
         console.log(error);
     }
